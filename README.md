@@ -4,7 +4,7 @@ The goal of this project is to work through all the steps necessary to create an
 If I am feeling brave I will add in a recycler view too.
 
 ## Overview and plan
-**NO VIDEO YET** 
+[intro video](https://csumb.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=590f9a51-5871-4acb-9465-b2300133a5f5)
 This is the overall view of the final product.  Once I get the login screen setup and working, including the logout features, I will record this video.  Anything afer this (editing logs, more user info, etc. Will be shown in their respective video).
 
 
