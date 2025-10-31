@@ -88,13 +88,14 @@
         app:layout_constraintStart_toEndOf="@id/repLabelTextView" />
 
     <Button
+        android:id="@+id/logButton"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/repInputEditText"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
         android:text="@string/log"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repInputEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
