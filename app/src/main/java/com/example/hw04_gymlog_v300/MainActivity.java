@@ -5,12 +5,17 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.hw04_gymlog_v300.databinding.ActivityMainBinding;
-
 import java.util.Locale;
 
+/**
+ * @author Marissa Benenati
+ * <br>⋆.˚｡⋆⚘⭒⋆✴︎˚｡⋆
+ * <br>COURSE: CST 338 - Software Design
+ * <br>DATE: 10/30/2025
+ * <br>ASSIGNMENT: GymLog
+ */
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
