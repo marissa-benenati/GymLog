@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.hw04_gymlog_v300.database.GymLogRepository;
 import com.example.hw04_gymlog_v300.database.entities.GymLog;
 import com.example.hw04_gymlog_v300.databinding.ActivityMainBinding;
+
+import java.util.ArrayList;
 import java.util.Locale;
 
 /**
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         repository = GymLogRepository.getRepository(getApplication());
 
         binding.logDisplayTextView.setMovementMethod(new ScrollingMovementMethod());
+        updateDisplay();
 
         binding.logButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,17 +52,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void insertGymLogRecord(){
+        if(mExercise.isEmpty()){
+            return;
+        }
         GymLog log = new GymLog(mExercise, mWeight, mReps);
         repository.insertGymLog(log);
     }
 
     private void updateDisplay(){
-        String currentInfo = binding.logDisplayTextView.getText().toString();
-        Log.d(TAG, "Current Info: " + currentInfo);
-        String newDisplay = String.format(Locale.US,"Exercise: %s%nWeight: %.2f%nReps: %d%n=-=-=-=%n%s", mExercise, mWeight, mReps, currentInfo);
-
-        binding.logDisplayTextView.setText(newDisplay);
-        Log.i(TAG, repository.getAllLogs().toString());
+        ArrayList<GymLog> allLogs = repository.getAllLogs();
+        if(allLogs.isEmpty()){
+            binding.logDisplayTextView.setText(R.string.nothing_to_show_time_to_hit_the_gym);
+        }
+        StringBuilder sb = new StringBuilder();
+        for(GymLog log : allLogs){
+            sb.append(log);
+        }
+        binding.logDisplayTextView.setText(sb.toString());
+        //Log.i(TAG, repository.getAllLogs().toString());
     }
 
     private void getInformationFromDisplay(){
