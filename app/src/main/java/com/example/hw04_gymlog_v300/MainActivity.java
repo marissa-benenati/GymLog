@@ -85,26 +85,13 @@ public class MainActivity extends AppCompatActivity {
 
         updateSharedPreference();
 
-        //TODO: remove two lines below
-        //binding.logDisplayTextView.setMovementMethod(new ScrollingMovementMethod());
-        //updateDisplay();
-
         binding.logButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getInformationFromDisplay();
                 insertGymLogRecord();
-                //TODO: remove line below
-                //updateDisplay();
             }
         });
-//TODO: remove this block
-//        binding.exerciseInputEditText.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                updateDisplay();
-//            }
-//        });
     }
 
     private void loginUser(Bundle savedInstanceState) {
